@@ -1,0 +1,48 @@
+<h1><%= @selected.name %></h1>
+
+<% if @selected.favourite == true %>
+  <%=" Contact in your favourite" %>
+  <%else %>
+  <%= "Contact not in your favourite" %>
+  <% end %>
+
+  <br>
+
+
+<form action="/favourite" method="POST">
+  <% if @selected.favourite != true%>
+
+  <button type="submit" name="fav" value="true">Add to favourite</button>
+
+ <!-- <input type="checkbox" name="fav" value=true>add to favorite<br>
+  <input type="submit" value="favorite"> -->
+  <% else %>
+  <button type="submit" name="fav" value="false">Remove from favourite</button>
+  <!-- <input type="checkbox" name="fav" value=true>Remove from favorite<br>
+   <input type="submit" value="favorite"> -->
+  <% end %>
+
+
+  <input type="hidden" name="id"
+      value="<%= @selected.id %>">
+  <input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
+
+
+
+
+
+
+
+
+
+<p>email: <%=@selected.email%> </p>
+
+<p>Phone Number: <%= @selected.phonenumber %> </p>
+
+<p>adress:<br><%=@selected.adress%></p>
+
+
+
+<%= link_to "Home", "/" %>
