@@ -8,6 +8,10 @@ class ContactController < ApplicationController
 
   end
 
+  def my_favourite
+        @fav_array = Contact.where(favourite: true)
+  end
+
 
   def  show_user
         @selected = Contact.find_by(id: params[:identity])

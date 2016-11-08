@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
     post "/contact", to: "contact#create"
 
+
+    get "/my_favourite", to: "contact#my_favourite"
+
     get "/:identity", to: "contact#show_user"
 
     post"/favourite", to: "contact#favourite"
+
 
 
 
