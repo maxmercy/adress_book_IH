@@ -10,10 +10,22 @@ Rails.application.routes.draw do
 
     get "/my_favourite", to: "contact#my_favourite"
 
-    get "/:identity", to: "contact#show_user"
 
     post"/favourite", to: "contact#favourite"
 
+
+
+
+    post"/search", to: "contact#search"
+
+
+
+    get"/search_result/:variable", to: "contact#search_result"
+
+
+
+
+    get "/identity/:identity", to: "contact#show_user"
 
 
 

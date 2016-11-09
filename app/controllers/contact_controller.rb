@@ -17,13 +17,23 @@ class ContactController < ApplicationController
         @selected = Contact.find_by(id: params[:identity])
   end
 
+  def search
+        @variable = params[:q]
+        redirect_to("/search_result/#{@variable}")
+  end
+
+
+  def search_result
+          @variable = params[:variable]
+          @contacts = Contact.where("name like ?",  "%#{@variable}%")
+  end
 
   def favourite
       @selected = Contact.find_by(id: params[:id])
       @selected.update_attributes(:favourite => params[:fav])
       # uate attribute => true
       # id
-      redirect_to("/#{@selected[:id]}")
+      redirect_to("/identity/#{@selected[:id]}")
   end
 
 

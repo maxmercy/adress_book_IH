@@ -11,15 +11,9 @@
 
 <form action="/favourite" method="POST">
   <% if @selected.favourite != true%>
-
   <button type="submit" name="fav" value="true">Add to favourite</button>
-
- <!-- <input type="checkbox" name="fav" value=true>add to favorite<br>
-  <input type="submit" value="favorite"> -->
   <% else %>
   <button type="submit" name="fav" value="false">Remove from favourite</button>
-  <!-- <input type="checkbox" name="fav" value=true>Remove from favorite<br>
-   <input type="submit" value="favorite"> -->
   <% end %>
 
 
@@ -28,11 +22,6 @@
   <input type="hidden" name="authenticity_token"
       value="<%= form_authenticity_token %>">
 </form>
-
-
-
-
-
 
 
 
